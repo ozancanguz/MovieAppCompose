@@ -38,7 +38,7 @@ fun MovieScreen( navController: NavController, viewModel: MoviesViewModel= hiltV
 
     val state=viewModel.state.value
 
-   Box(modifier = Modifier.fillMaxSize()){
+   Box(modifier = Modifier.fillMaxSize().background(Color.Black)){
        
        Column {
            MovieSearchBar(modifier = Modifier
@@ -51,7 +51,14 @@ fun MovieScreen( navController: NavController, viewModel: MoviesViewModel= hiltV
 
            LazyColumn(modifier = Modifier.fillMaxSize()){
               
-               items(state.movies){
+               items(state.movies){movie ->
+
+             MovieListRow(movie = movie, onItemClick = {
+
+                 // on item clicked
+                // navController.navigate(Screen.MovideDetailsScreen.route)
+
+             })
 
 
                }
