@@ -52,9 +52,8 @@ fun MovieScreen( navController: NavController, viewModel: MoviesViewModel= hiltV
            LazyColumn(modifier = Modifier.fillMaxSize()){
               
                items(state.movies){
-                   Text(text = it.Title
-                   , color = Color.Blue
-                   )
+
+
                }
            }
        }
