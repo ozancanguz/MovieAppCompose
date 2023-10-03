@@ -22,7 +22,11 @@ class MoviesViewModel@Inject constructor(private val getMovieUseCase: GetMovieUs
 
     private var job: Job? =null
 
-    fun getMovies(search:String){
+    init {
+        getMovies(_state.value.search)
+    }
+
+     fun getMovies(search:String){
 
         job?.cancel()
 
@@ -35,7 +39,20 @@ class MoviesViewModel@Inject constructor(private val getMovieUseCase: GetMovieUs
       }.launchIn(viewModelScope)
 
     }
-
-
+    fun onEvent(event : MoviesEvent) {
+        when(event) {
+            is MoviesEvent.Search -> {
+                getMovies(event.searchString)
+            }
+        }
+    }
 
 }
+
+
+
+
+
+
+
+
