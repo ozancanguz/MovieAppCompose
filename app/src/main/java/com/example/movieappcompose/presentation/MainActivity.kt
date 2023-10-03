@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
             NavHost(navController =navController , startDestination = Screen.MovieScreen .route){
 
                 composable(Screen.MovieScreen.route){
-                    MovieScreen()
+                    MovieScreen(navController)
 
                 }
 
