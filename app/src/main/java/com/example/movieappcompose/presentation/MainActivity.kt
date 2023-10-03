@@ -36,6 +36,7 @@ import com.example.movieappcompose.presentation.nav.MovieDetailsScreen
 import com.example.movieappcompose.presentation.nav.MovieScreen
 import com.example.movieappcompose.presentation.nav.Screen
 import com.example.movieappcompose.ui.theme.MovieAppComposeTheme
+import com.example.movieappcompose.util.Constants.Companion.IMDB_ID
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -58,7 +59,7 @@ class MainActivity : ComponentActivity() {
                 }
 
 
-                composable(Screen.MovideDetailsScreen.route){
+                composable(Screen.MovideDetailsScreen.route+"/${IMDB_ID}"){
                     MovieDetailsScreen()
                 }
 

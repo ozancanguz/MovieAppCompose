@@ -56,7 +56,7 @@ fun MovieScreen( navController: NavController, viewModel: MoviesViewModel= hiltV
              MovieListRow(movie = movie, onItemClick = {
 
                  // on item clicked
-                // navController.navigate(Screen.MovideDetailsScreen.route)
+                 navController.navigate(Screen.MovideDetailsScreen.route+"/${movie.imdbID}")
 
              })
 
